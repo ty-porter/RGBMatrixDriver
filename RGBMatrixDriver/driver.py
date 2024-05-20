@@ -4,6 +4,7 @@ from enum import Enum
 
 from RGBMatrixDriver.arguments import *
 from RGBMatrixDriver.matrix import create_benchmarked_matrix
+from RGBMatrixDriver.options import prefilled_matrix_options
 
 
 class RGBMatrixDriverMode(Enum):
@@ -67,6 +68,7 @@ class RGBMatrixDriverWrapper:
 
         self.driver.RGBMatrix = create_benchmarked_matrix(self.driver.RGBMatrix)
         self.driver.RGBMatrixArguments = RGBMatrixArguments
+        self.driver.prefilled_matrix_options = prefilled_matrix_options
 
         for name in self.NO_OVERRIDE:
             setattr(self.driver, name, getattr(self, name))

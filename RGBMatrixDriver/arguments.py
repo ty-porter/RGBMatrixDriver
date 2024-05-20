@@ -81,7 +81,7 @@ defaults.add_argument(
 )
 defaults.add_argument(
     "--led-no-hardware-pulse",
-    action="store",
+    action="store_false",
     help="Don't use hardware pin-pulse generation.",
 )
 defaults.add_argument(
