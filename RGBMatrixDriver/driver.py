@@ -17,11 +17,7 @@ class RGBMatrixDriverWrapper:
     class UninitializedDriver(Exception):
         pass
 
-    NO_OVERRIDE = [
-        "is_uninitialized",
-        "is_hardware",
-        "is_emulated"
-    ]
+    NO_OVERRIDE = ["is_uninitialized", "is_hardware", "is_emulated"]
 
     def __init__(self):
         self.hardware_load_failed = False
@@ -74,7 +70,7 @@ class RGBMatrixDriverWrapper:
             setattr(self.driver, name, getattr(self, name))
 
     def __found_emulated_flag(self):
-        '''
+        """
         This gets around a nasty chicken-and-egg problem:
             1. When imported, RGBMD needs the args to know whether to load the hardware or software driver
             2. To get the arg wrapper class, RGBMD needs to be imported
@@ -82,7 +78,7 @@ class RGBMatrixDriverWrapper:
                via CLI will raise exceptions until they are added
 
         This method looks for any flag in sys.argv and removes it if found -- bypassing argparse.
-        '''
+        """
         found = False
 
         for arg in sys.argv:
