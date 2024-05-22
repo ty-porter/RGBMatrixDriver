@@ -63,7 +63,9 @@ class RGBMatrixDriverWrapper:
         else:
             raise RGBMatrixDriverWrapper.UninitializedDriver()
 
-        self.driver.RGBMatrix = create_benchmarked_matrix(self.driver.RGBMatrix, self.driver.graphics)
+        self.driver.RGBMatrix = create_benchmarked_matrix(
+            self.driver.RGBMatrix, self.driver.graphics
+        )
         self.driver.RGBMatrixArguments = RGBMatrixArguments
         self.driver.logger = Logger
         self.driver.prefilled_matrix_options = prefilled_matrix_options

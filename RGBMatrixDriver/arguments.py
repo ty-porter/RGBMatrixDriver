@@ -152,6 +152,7 @@ defaults.add_argument(
     type=str,
 )
 
+
 class RGBMatrixArguments(argparse.ArgumentParser):
     def __init__(self, *args, **kwargs):
         if "parents" in kwargs:
