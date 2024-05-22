@@ -143,6 +143,14 @@ defaults.add_argument(
     action="store_true",
 )
 
+# Driver options
+defaults.add_argument(
+    "--driver-fps",
+    action="store",
+    choices=["log", "overlay"],
+    help="Calculate FPS and display via selected method: log, overlay",
+    type=str,
+)
 
 class RGBMatrixArguments(argparse.ArgumentParser):
     def __init__(self, *args, **kwargs):

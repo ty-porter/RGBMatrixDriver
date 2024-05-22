@@ -28,4 +28,7 @@ def prefilled_matrix_options(args):
     if args.led_slowdown_gpio is not None:
         options.gpio_slowdown = args.led_slowdown_gpio
 
+    # Driver specific options
+    options.driver_fps_mode = args.driver_fps
+
     return options
