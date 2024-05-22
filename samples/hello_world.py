@@ -14,7 +14,7 @@ class HelloWorld:
         self.canvas = self.matrix.CreateFrameCanvas()
 
         self.font = graphics.Font()
-        self.font.LoadFont("./fonts/7x13.bdf")
+        self.font.LoadFont("../RGBMatrixDriver/fonts/4x6.bdf")
 
         self.color = graphics.Color(255, 255, 0)
 
