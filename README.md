@@ -94,6 +94,8 @@ You should reference the [project README](https://github.com/hzeller/rpi-rgb-led
 ```
 --driver-fps {log,overlay}
   Calculate FPS and display via selected method: log, overlay
+--driver-screenshots
+  Enable screenshot capture via the PrintScreen key. Captures will be saved to the 'screenshots' directory (created if does not exist)
 --emulated
   Run the script in software emulation mode via RGBMatrixEmulator
 ```

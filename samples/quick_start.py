@@ -14,10 +14,10 @@ canvas = matrix.CreateFrameCanvas()
 
 # Push the pixels!
 while True:
-  # Simulate static -- Set R, G, B equal to each other at random
-  for y in range(matrix.height):
-    for x in range(matrix.width):
-      canvas.SetPixel(x, y, *tuple([r(0, 255)] * 3))
+    # Simulate static -- Set R, G, B equal to each other at random
+    for y in range(matrix.height):
+        for x in range(matrix.width):
+            canvas.SetPixel(x, y, *tuple([r(0, 255)] * 3))
 
-  canvas = matrix.SwapOnVSync(canvas)
-  canvas = matrix.SwapOnVSync(canvas)
+    canvas = matrix.SwapOnVSync(canvas)
+    canvas = matrix.SwapOnVSync(canvas)

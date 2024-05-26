@@ -1,13 +1,16 @@
 from RGBMatrixDriver.middleware.helper import HelperMiddleware
 from RGBMatrixDriver.middleware.fps import FPSMiddleware
 from RGBMatrixDriver.middleware.logger import LoggerMiddleware
+from RGBMatrixDriver.middleware.screenshot import ScreenshotMiddleware
+
 
 class Middleware:
     # Loaded in order!
     MIDDLEWARES = [
-        LoggerMiddleware,
+        LoggerMiddleware,  # Needs to come first, to initialize the logger
         HelperMiddleware,
-        FPSMiddleware
+        ScreenshotMiddleware,
+        FPSMiddleware,  # Needs to come last, for an accurate benchmark
     ]
 
     @staticmethod

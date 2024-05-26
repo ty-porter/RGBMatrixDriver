@@ -91,6 +91,8 @@ class FPSMiddleware:
                 return round(sum(self.fps) / len(self.fps), 2)
 
             def __should_refresh(self):
-                return self.tick_stop >= self.refreshed_at + (self.refresh_rate_ms / 1000)
+                return self.tick_stop >= self.refreshed_at + (
+                    self.refresh_rate_ms / 1000
+                )
 
         driver.RGBMatrix = _FPSInjectedMatrix

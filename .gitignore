@@ -1,4 +1,5 @@
 venv/
+screenshots/
 __pycache__/
 .pypirc
 *.egg-info/

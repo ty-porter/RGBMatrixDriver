@@ -156,6 +156,11 @@ class RGBMatrixArguments(argparse.ArgumentParser):
             help="Calculate FPS and display via selected method: log, overlay",
             type=str,
         )
+        self.add_argument(
+            "--driver-screenshots",
+            help="Enable PNG screenshot capture via the PrintScreen key. Captures will be saved to the 'screenshots' directory (created if does not exist)",
+            action="store_true",
+        )
 
         # This is a special case and should come last
         # By the time this is reached the driver has been initialized and this argument has been removed from sys.argv
@@ -163,5 +168,5 @@ class RGBMatrixArguments(argparse.ArgumentParser):
         self.add_argument(
             "--emulated",
             help="Run the script in software emulation mode via RGBMatrixEmulator",
-            action="store_false"
+            action="store_false",
         )
