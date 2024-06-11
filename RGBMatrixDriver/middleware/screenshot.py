@@ -1,7 +1,7 @@
 import os, time
 import numpy as np
 from PIL import Image
-from pynput import keyboard
+import keyboard
 from threading import Lock
 
 
@@ -61,18 +61,14 @@ class ScreenshotMiddleware:
                     self.mutex.release()
 
             def __start_keypress_listener(self):
-                def on_release(key, matrix):
-                    if key == keyboard.Key.print_screen:
-                        matrix.mutex.acquire()
-                        matrix.received_event = True
-                        matrix.mutex.release()
+                def on_hotkey(matrix):
+                    matrix.mutex.acquire()
+                    matrix.received_event = True
+                    matrix.mutex.release()
 
-                        # Debounce, can only screenshot once per second
-                        time.sleep(1)
+                    # Debounce, can only screenshot once per second
+                    time.sleep(1)
 
-                listener = keyboard.Listener(
-                    on_release=lambda key: on_release(key, self)
-                )
-                listener.start()
+                keyboard.add_hotkey("print screen", lambda : on_hotkey(self))
 
         driver.RGBMatrix = _ScreenshotInjectedMiddleware

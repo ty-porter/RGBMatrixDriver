@@ -31,9 +31,9 @@ classifiers = [
     "Topic :: Other/Nonlisted Topic",
 ]
 dependencies = [
+    "keyboard",
     "numpy>=1.2.0",
     "Pillow>=10.0.1",
-    "pynput",
     "RGBMatrixEmulator"
 ]
 
